@@ -1,0 +1,12 @@
+import fetch from 'node-fetch';
+
+const test = async (username, password) => {
+    const response = await fetch('http://localhost:8081/' + username + '/' + password);
+    if (response.status === 200) {
+        console.log("Granted");
+    } else if (response.status === 403) {
+        console.log("Denied");
+    }
+}
+
+test('un1', 'pw2');
