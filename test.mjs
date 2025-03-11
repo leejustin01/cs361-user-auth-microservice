@@ -9,4 +9,10 @@ const test = async (username, password) => {
     }
 }
 
-test('un1', 'pw2');
+const testCreate = async (username, password) => {
+    const response = await fetch('http://localhost:8081/create/' + username + '/' + password);
+    console.log(response.statusText);
+}
+
+//test('un1', 'pw2');
+testCreate('un1', 'pw12321');
