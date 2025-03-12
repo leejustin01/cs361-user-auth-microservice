@@ -1,8 +1,12 @@
 const express = require('express');
 const fs = require('fs').promises;
+const cors = require('cors');
 
 const app = express();
-const PORT = 8081;
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
+const PORT = 8079;
 
 const loadLogins = async () => {
     const data = await fs.readFile('logins.json', 'utf-8');
